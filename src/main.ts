@@ -10,4 +10,4 @@ function onScroll() {
   else root.dataset.scroll = "false";
 }
 onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
+window.addEventListener("scroll", onScroll, { passive: true});
