@@ -11,6 +11,10 @@ import DeltaTime from "../../DeltaTime";
 import { ShaderToScreen } from "./shaderToScreen";
 import { Assists } from "../loader";
 
+
+const backgroundLoader = new THREE.TextureLoader();
+const backgroundTexture = backgroundLoader.load('/textures/terminal-bg.jpg');
+backgroundTexture.encoding = THREE.sRGBEncoding;
 export default function ScreenRenderEngine(
   assists: Assists,
   renderer: THREE.WebGLRenderer,
@@ -74,6 +78,19 @@ export default function ScreenRenderEngine(
 
   const environmentMapTexture = assists.environmentMapTexture;
   environmentMapTexture.encoding = THREE.sRGBEncoding;
+
+  const backGround = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.596, 1.2, 1, 1),  // Adjust size to match your screen dimensions
+    new THREE.MeshBasicMaterial({ 
+      map: backgroundTexture,
+      transparent: true,
+      opacity: 0.8  // Adjust this value to change image opacity
+    })
+  );
+  backGround.position.set(0.5, -0.5, -0.01);
+  sceneRTT.add(backGround);  // Make sure to add it to the scene
+  
+
 
   const shaderToScreen = new ShaderToScreen(
     {

@@ -3,14 +3,15 @@
 
 ##   Hi there, 
 
-#  *I'm Ed H*
+#  *It's TechFoss Here*
 
-##   • Software Engineer
-##   • Digital Designer
-
-
-
+##   • TechFoss 2025
+##   • TocH Institute Of Science And 
+##     Technology
 
 
-### Welcome to ED-Linux 1.0 LTS
+
+
+
+### Welcome To TechFoss Terminal 
 ### →→ Scroll or type "help" to get started
